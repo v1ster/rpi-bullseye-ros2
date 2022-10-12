@@ -35,7 +35,7 @@ TARGET_ZIP=$TARGET_ZIP.zip
 # Download zip ===========================================================================
 sudo apt update
 sudo apt install git wget -y
-URL="https://github.com/Ar-Ray-code/rpi-bullseye-ros2/releases/download/ros2-$VERSION/$TARGET_ZIP"
+URL="https://github.com/v1ster/rpi-bullseye-ros2/releases/download/ros2-$VERSION/$TARGET_ZIP"
 
 wget $URL || { echo "Check the github release and see if the file is there." && unset TARGET_ZIP ROS_INSTALL_DIR VERSION TARGET_DISTRO SCRIPT_DIR && exit 1; }
 
@@ -48,7 +48,7 @@ unset TARGET_ZIP ROS_INSTALL_DIR VERSION TARGET_DISTRO
 
 # Install dependencies ===================================================================
 cd $SCRIPT_DIR
-git clone https://github.com/Ar-Ray-code/rpi-bullseye-ros2.git
+git clone https://github.com/v1ster/rpi-bullseye-ros2.git
 
 sudo bash $SCRIPT_DIR/rpi-bullseye-ros2/install-list/apt.bash $SCRIPT_DIR/rpi-bullseye-ros2/install-list/apt-list.txt
 pip3 install -r $SCRIPT_DIR/rpi-bullseye-ros2/install-list/requirements.txt
